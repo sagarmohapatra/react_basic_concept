@@ -1,0 +1,20 @@
+.button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button.clicked {
+    background-color: red;
+  }
+  
+  .button:hover {
+    background-color:blue;
+  }
+  
+  
