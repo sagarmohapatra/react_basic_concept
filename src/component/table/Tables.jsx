@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Typography,
@@ -12,6 +12,16 @@ import {
 } from "@mui/material";
 
 const Tables = () => {
+  // dataget in local
+
+  const getDataLocal = () => {
+    const data = localStorage.getItem("any");
+    if (data) {
+      return JSON.parse(data);
+    } else {
+      return [];
+    }
+  };
   const [input, setinput] = useState({
     first: "",
     second: "",
@@ -20,7 +30,7 @@ const Tables = () => {
     qulification: "",
   });
   console.log(input);
-  const [store, setstore] = useState([]);
+  const [store, setstore] = useState(getDataLocal());
   console.log("store:-", store);
   const change = (e) => {
     const copyinput = { ...input };
@@ -43,11 +53,19 @@ const Tables = () => {
     });
   };
 
-  const remove=(index)=>{
-const copydata=[...store]
-copydata.splice(index,1)
-setstore(copydata)
-  }
+  const remove = (index) => {
+    const copydata = [...store];
+    copydata.splice(index, 1);
+    setstore(copydata);
+
+    
+
+    
+  };
+  // datasave in localStorege 
+  useEffect(() => {
+    localStorage.setItem("any", JSON.stringify(store));
+  }, [store]);
   return (
     <Box>
       <Container maxWidth="xl">
@@ -126,7 +144,6 @@ setstore(copydata)
               <Typography>Data</Typography>
               <Divider />
               <table className="table  table-striped">
-              
                 <thead>
                   <tr>
                     <th>Sl_no</th>
@@ -137,21 +154,25 @@ setstore(copydata)
                     <th>qulification</th>
                   </tr>
                 </thead>
-                
-                  {store.map((data,index)=>(
-                    <tbody key={index}>
-                    <tr >
-                      <td>{index+1}</td>
+
+                {store.map((data, index) => (
+                  <tbody key={index}>
+                    <tr>
+                      <td>{index + 1}</td>
                       <td>{data.first}</td>
                       <td>{data.second}</td>
                       <td>{data.number}</td>
                       <td>{data.mail}</td>
                       <td>{data.qulification}</td>
-                      <td style={{crosor:"pointer"}} onClick={()=>remove(data.index)}><Button>Delete</Button></td>
+                      <td
+                        style={{ crosor: "pointer" }}
+                        onClick={() => remove(data.index)}
+                      >
+                        <Button>Delete</Button>
+                      </td>
                     </tr>
-                    </tbody>
-                  ))}
-                
+                  </tbody>
+                ))}
               </table>
             </Card>
           </Grid>
