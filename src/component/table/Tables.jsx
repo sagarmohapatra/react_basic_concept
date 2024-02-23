@@ -6,9 +6,9 @@ import {
   Grid,
   Container,
   Divider,
-  
   TextField,
   Button,
+  Table,
 } from "@mui/material";
 
 const Tables = () => {
@@ -21,7 +21,7 @@ const Tables = () => {
   });
   console.log(input);
   const [store, setstore] = useState([]);
-  console.log("store:-",store);
+  console.log("store:-", store);
   const change = (e) => {
     const copyinput = { ...input };
     copyinput[e.target.name] = e.target.value;
@@ -31,10 +31,23 @@ const Tables = () => {
   const submit = (e) => {
     console.log("fghj");
     e.preventDefault();
-    const copystore=[...store]
-    copystore.push(input)
-    setstore(copystore)
+    const copystore = [...store];
+    copystore.push(input);
+    setstore(copystore);
+    setinput({
+      first: "",
+      second: "",
+      number: "",
+      mail: "",
+      qulification: "",
+    });
   };
+
+  const remove=(index)=>{
+const copydata=[...store]
+copydata.splice(index,1)
+setstore(copydata)
+  }
   return (
     <Box>
       <Container maxWidth="xl">
@@ -105,6 +118,41 @@ const Tables = () => {
                   </Box>
                 </form>
               </Box>
+            </Card>
+          </Grid>
+
+          <Grid xs={7}>
+            <Card>
+              <Typography>Data</Typography>
+              <Divider />
+              <table className="table  table-striped">
+              
+                <thead>
+                  <tr>
+                    <th>Sl_no</th>
+                    <th>First Name</th>
+                    <th>Second Name</th>
+                    <th>Mobile No</th>
+                    <th>Gmail</th>
+                    <th>qulification</th>
+                  </tr>
+                </thead>
+                
+                  {store.map((data,index)=>(
+                    <tbody key={index}>
+                    <tr >
+                      <td>{index+1}</td>
+                      <td>{data.first}</td>
+                      <td>{data.second}</td>
+                      <td>{data.number}</td>
+                      <td>{data.mail}</td>
+                      <td>{data.qulification}</td>
+                      <td style={{crosor:"pointer"}} onClick={()=>remove(data.index)}><Button>Delete</Button></td>
+                    </tr>
+                    </tbody>
+                  ))}
+                
+              </table>
             </Card>
           </Grid>
         </Grid>
