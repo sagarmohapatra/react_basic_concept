@@ -1,6 +1,7 @@
 
 
 import './App.css';
+import Parent from './component/child_parent/Parent';
 // import Header from './component/routing/Header';
 // import Carosel from './component/carosel/Carosel';
 // import Empty from './component/empty/Empty';
@@ -18,7 +19,8 @@ function App() {
     {/* <Empty/> */}
     {/* <Condition/> */}
     {/* <Tables/> */}
-    <TableValidation/>
+    {/* <TableValidation/> */}
+    <Parent/>
     </div>
   );
 }
