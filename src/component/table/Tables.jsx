@@ -33,9 +33,9 @@ const Tables = () => {
   const [store, setstore] = useState(getDataLocal());
   console.log("store:-", store);
   const change = (e) => {
-    const copyinput = { ...input };
-    copyinput[e.target.name] = e.target.value;
-    setinput(copyinput);
+    // const copyinput = { ...input };
+    // copyinput[e.target.name] = e.target.value;
+    // setinput(copyinput);
   };
 
   const submit = (e) => {
