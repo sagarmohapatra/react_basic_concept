@@ -44,9 +44,12 @@ const TableValidation = () => {
   };
 
   const deletebtn = (index) => {
+    console.log("rb");
     const copydelete = [...store];
     copydelete.splice(index, 1);
     setstore(copydelete);
+    // const copy=store.filter((p)=>p.index !==index)
+    // setstore(copy)
   };
 
 //   data save

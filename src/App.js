@@ -9,6 +9,9 @@ import Search from "./component/search/Search";
 import TableValidation from "./component/table/TableValidation";
 import Tables from "./component/table/Tables";
 import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+import SimpleDashbord from "./component/dashbord/Delete_&_Edit/SimpleDashbord";
+import Home from "./component/dashbord/CRUD_with_JSON/Home";
+import AppRouter from "./component/dashbord/CRUD_with_JSON/AppRouter";
  
 function App() {
   return (
@@ -20,7 +23,9 @@ function App() {
       {/* <Tables/> */}
       {/* <TableValidation/> */}
       {/* <Parent/> */}
-      <Search />
+      {/* <Search /> */}
+     {/* <SimpleDashbord/> */}
+     <AppRouter/>
     </div>
   );
 }
