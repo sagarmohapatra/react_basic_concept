@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 const Search = () => {
   const [store, setstore] = useState([]);
   const [ress, setress] = useState("");
+  
   console.log(store);
   const data = "https://jsonplaceholder.typicode.com/users";
   const res = async () => {
@@ -17,6 +18,12 @@ const Search = () => {
     setress(e.target.value);
   };
 
+  const deletehere = (id) => {
+    const fg = store.filter((li) => li.id !== id);
+    setstore(fg);
+  };
+
+  
   return (
     <div>
       <form>
@@ -38,19 +45,32 @@ const Search = () => {
           </tr>
         </thead>
         <tbody>
-          {/* {store.filter((did) => {
-              return ress.toLowerCase() === ""? did: did.name.toLowerCase().includes(ress);
-            }) */}
-          {store.filter((did)=>{
-            return ress.toLowerCase()=== ""? did:did.name.toLowerCase().includes(ress)
-          })
+          {store
+            .filter((did) => {
+              return ress.toLowerCase() === ""? did : did.name.toLowerCase().includes(ress);
+            })
             .map((res) => (
+              
               <tr key={res.id}>
                 <td>{res.id}</td>
                 <td>{res.name}</td>
                 <td>{res.username}</td>
                 <td>{res.email}</td>
                 <td>{res.phone}</td>
+                <td>
+                  <button
+                    style={{
+                      color: "white",
+                      backgroundColor: "red",
+                      borderColor: "red",
+                      cursor: "pointer",
+                    }}
+                    onClick={(id) => deletehere(res.id)}
+                  >
+                    delete
+                  </button>
+                </td>
+                
               </tr>
             ))}
         </tbody>
