@@ -1,6 +1,14 @@
 {
   "users": [
     {
+      "id": "3",
+      "name": "Dibya Lebsack",
+      "username": "Karianne",
+      "email": "Julianne.OConner@kory.org",
+      "phone": "493-5678-9623 x156",
+      "website": "kale.com"
+    },
+    {
       "id": "4",
       "name": "Patricia Lebsack",
       "username": "Karianne",
@@ -55,21 +63,6 @@
       "email": "Rey.Padberg@karina.biz",
       "phone": "024-648-3804",
       "website": "ambrose.net"
-    },
-    {
-      "id": "93e0",
-      "name": "sagar",
-      "email": "sagarkumarmohapatra5@gmail.com"
-    },
-    {
-      "id": "a8c5",
-      "name": "",
-      "email": ""
-    },
-    {
-      "id": "5ae9",
-      "name": "",
-      "email": ""
     }
   ]
 }

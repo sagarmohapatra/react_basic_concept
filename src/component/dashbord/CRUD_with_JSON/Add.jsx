@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Add = () => {
   const [inputData, setinputData] = useState({
     name: "",
+    
     email: "",
   });
 

@@ -12,6 +12,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 import SimpleDashbord from "./component/dashbord/Delete_&_Edit/SimpleDashbord";
 import Home from "./component/dashbord/CRUD_with_JSON/Home";
 import AppRouter from "./component/dashbord/CRUD_with_JSON/AppRouter";
+import Custom from "./component/hook/Custom";
  
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
       {/* <Parent/> */}
       {/* <Search /> */}
      {/* <SimpleDashbord/> */}
-     <AppRouter/>
+     {/* <AppRouter/> */}
+     <Custom/>
     </div>
   );
 }
