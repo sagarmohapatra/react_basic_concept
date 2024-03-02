@@ -1,12 +1,21 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Add = () => {
   const [inputData, setinputData] = useState({
     name: "",
     email: "",
   });
+
+  const navigate=useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post("http://localhost:3030/users", inputData) //where we add inputData in url for add form data
+      .then((res) => {
+        alert("data added successfully");
+        navigate("/")
+      }).catch(err=>console.log(err))
   };
   return (
     <div>
