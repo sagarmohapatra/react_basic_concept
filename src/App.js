@@ -13,6 +13,10 @@ import SimpleDashbord from "./component/dashbord/Delete_&_Edit/SimpleDashbord";
 import Home from "./component/dashbord/CRUD_with_JSON/Home";
 import AppRouter from "./component/dashbord/CRUD_with_JSON/AppRouter";
 import Custom from "./component/hook/Custom";
+import First from "./component/corosel/First";
+import Delete_clickbox from "./component/search/Delete_clickbox";
+import Table_api from "./component/table/Table_api";
+import PhoneOtpLogin from "./component/otp_login/PhoneOtpLogin";
  
 function App() {
   return (
@@ -27,7 +31,11 @@ function App() {
       {/* <Search /> */}
      {/* <SimpleDashbord/> */}
      {/* <AppRouter/> */}
-     <Custom/>
+     {/* <Custom/> */}
+     {/* <First/> */}
+     {/* <Delete_clickbox/> */}
+     {/* <Table_api/> */}
+     <PhoneOtpLogin/>
     </div>
   );
 }
